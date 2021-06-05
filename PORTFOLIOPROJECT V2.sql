@@ -18,7 +18,7 @@ FROM PortfolioProject..CovidDeaths
 WHERE location like '%india%'
 ORDER BY 1,2
 
--- looking at TOtale cases vs Population
+-- looking at Total cases vs Population
 -- shows what percentage of population got covid
 
 SELECT location, date, population, total_cases,(total_cases/population)*100 as PercentPopulationInfected
@@ -26,7 +26,7 @@ FROM PortfolioProject..CovidDeaths
 --WHERE location like '%india%'
 ORDER BY 1,2
 
--- looking at countrys with highest infection rate compared to population
+-- looking at country's with highest infection rate compared to population
 
 SELECT location, population, MAX(total_cases) AS HighestInfectionCount,MAX((total_cases/population))*100 as PercentPopulationInfected
 FROM PortfolioProject..CovidDeaths
@@ -65,7 +65,7 @@ where continent is not null
 Group By date
 order by 1,2
 
--- looking at TOtal Popluation vs Vaccinations
+-- looking at Total Popluation vs Vaccinations
 
 
 SELECT dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations,
